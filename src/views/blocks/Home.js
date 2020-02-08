@@ -1,5 +1,5 @@
 import draggable from 'vuedraggable'
-import _ from "@/views/blocks/_blocks"
+import * as _ from "@/views/blocks/_blocks"
 
 export const State = {
 	count:1,
@@ -14,12 +14,12 @@ export default function(){
 		_.fullCol([
 			_.el("B-Jumbotron",[
 				_.h1Row(process.env.VUE_APP_WELCOME),
-				_.h5Row("Severing Center city and South Philadelphia") 
+				_.h5Row("Severing Center City and South Philadelphia") 
 				],
 				{class:"text-center mt-3"}
 			)
 		]),
-		_.el("B-Container",[
+		_.container([
 			_.fullCol([
 				_.el(draggable,[
 					_.h1Row("Services"),

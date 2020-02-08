@@ -13,7 +13,7 @@
 				</component>
 				</template>
 				<template v-else>
-					<Test :key="index" :block="sub"/>
+					<Block :key="index" :block="sub"/>
 				</template>
 		</template>
   	</template>
@@ -21,7 +21,7 @@
 </template>
 <script>
   export default {
-    name: "Test",
+    name: "Block",
   	props:{
   		block:Object
   	},

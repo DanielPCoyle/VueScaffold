@@ -1,14 +1,14 @@
 <template>
 	<div class="home">
-		<Dynamic2 v-for="(block,index) in blocks" :key="index" :block="block" />
+		<Block v-for="(block,index) in blocks" :key="index" :block="block" />
 	</div>
 </template>
 <script>
-	import Dynamic2 from "@/components/Dynamic2"
+	import Block from "@/components/Block"
 	export default {
 		name: "Dynamic",
 		components: {
-			Dynamic2
+			Block
 		},
 		props:{
 			Blocks:Function,

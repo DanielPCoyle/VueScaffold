@@ -1,4 +1,4 @@
-import _ from "./_blocks.js"
+import * as _ from "./_blocks.js"
 
 export const State = {
 	count:1,
@@ -7,9 +7,10 @@ export const State = {
 
 export default function(){
 	return [
-		_.container([
-			_.topBar(),
-		]),
-		_.fullCol("<h1>About</h1>")
+
+		_.layout([
+				_.fullCol("<h1>About</h1>")
+			]
+		)
 	]
 }
