@@ -7,7 +7,6 @@ export const State = {
 
 export default function(){
 	return [
-
 		_.layout([
 				_.fullCol("<h1>About</h1>")
 			]

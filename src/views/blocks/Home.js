@@ -8,28 +8,27 @@ export const State = {
 
 export default function(){
 	return [
-		_.container([
-			_.topBar(),
-		]),
-		_.fullCol([
-			_.el("B-Jumbotron",[
-				_.h1Row(process.env.VUE_APP_WELCOME),
-				_.h5Row("Severing Center City and South Philadelphia") 
-				],
-				{class:"text-center mt-3"}
-			)
-		]),
-		_.container([
+		_.layout([
 			_.fullCol([
-				_.el(draggable,[
-					_.h1Row("Services"),
-					_.row([
-						_.col("Local<br> Dog Walkers"),
-						_.col("Online and Mobile<br> Booking and Payment"),
-						_.col("Happy Pets<br> Happy Owners"),
-					],{class:"text-center"})
-				]),
-			])
+				_.el("B-Jumbotron",[
+					_.h1Row(process.env.VUE_APP_WELCOME),
+					_.h5Row("Severing Center City and South Philadelphia") 
+					],
+					{class:"text-center mt-3"}
+				)
+			]),
+			_.container([
+				_.fullCol([
+					_.el(draggable,[
+						_.h1Row("Services"),
+						_.row([
+							_.col("Local<br> Dog Walkers"),
+							_.col("Online and Mobile<br> Booking and Payment"),
+							_.col("Happy Pets<br> Happy Owners"),
+						],{class:"text-center"})
+					]),
+				])
+			]),
 		]),
 	]
 }
