@@ -1,20 +1,39 @@
 <template>
-  <component :is="block.tag" v-bind="block.attrs">
-  	<template v-if="block.slot">
-  		{{block.slot}}
+  <component :is="block.tag" v-bind="block.attrs"  
+	@mouseover="e('onMouseover')"
+	@click="e('onClick')">
+  	<template v-if="typeof(block.slot) !== 'object'">
+		<span v-html="block.slot" />
   	</template>
-  	<template v-if="block.subs">
-		<component v-for="(sub,index) in block.subs" :is="sub.tag" :key="index" v-bind="sub.attrs">
-			{{sub.slot}}
-		</component>
+  	<template v-else>{{/* there are subs */}}
+		<template v-for="(sub,index) in block.slot">
+				<template v-if="typeof(sub.slot) !== 'object'">
+					<component :key="index" :is="sub.tag" v-bind="sub.attrs">
+					<span v-html="sub.slot" />
+				</component>
+				</template>
+				<template v-else>
+					<Test :key="index" :block="sub"/>
+				</template>
+		</template>
   	</template>
   </component>
 </template>
 <script>
   export default {
-    name: "test",
+    name: "Test",
   	props:{
   		block:Object
+  	},
+  	methods:{
+	  	e(event){
+	  		if(this.$props.block.attrs && typeof(this.$props.block.attrs[event]) !== "undefined"){
+	  			this.$props.block.attrs[event](this)
+	  		} else{
+	  			return null
+	  		}
+	  	},
+	  	
   	}
   };
 </script>
