@@ -6,7 +6,7 @@ import AboutBlocks, { State as AboutState } from "@/views/blocks/About";
 
 Vue.use(VueRouter);
 
-const routes = [
+export const options = [
   {
     path: "/",
     name: "Dynamic",

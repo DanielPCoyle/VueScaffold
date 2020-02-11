@@ -2,7 +2,7 @@ import Vue from "nativescript-vue";
 import Navigator from "nativescript-vue-navigator";
 
 import App from "./App.vue";
-import { options } from "./router";
+import options from "./routes";
 import store from "./store";
 
 // adapt vue-router routes to nativescript-vue-navigator
