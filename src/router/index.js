@@ -1,8 +1,8 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Dynamic from "../views/Dynamic.vue";
-import HomeBlocks,{HomeState} from "@/views/blocks/Home"
-import AboutBlocks,{AboutState} from "@/views/blocks/About"
+import HomeBlocks,{State as HomeState} from "@/views/blocks/Home"
+import AboutBlocks,{State as AboutState} from "@/views/blocks/About"
 
 Vue.use(VueRouter);
 
