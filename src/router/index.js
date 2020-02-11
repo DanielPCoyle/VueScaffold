@@ -1,8 +1,8 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Dynamic from "../views/Dynamic.vue";
-import HomeBlocks,{State as HomeState} from "@/views/blocks/Home"
-import AboutBlocks,{State as AboutState} from "@/views/blocks/About"
+import HomeBlocks, { State as HomeState } from "@/views/blocks/Home";
+import AboutBlocks, { State as AboutState } from "@/views/blocks/About";
 
 Vue.use(VueRouter);
 
@@ -11,13 +11,13 @@ const routes = [
     path: "/",
     name: "Dynamic",
     component: Dynamic,
-    props:{Blocks:HomeBlocks,State:HomeState}
+    props: { Blocks: HomeBlocks, State: HomeState }
   },
   {
     path: "/about",
     name: "About",
     component: Dynamic,
-    props:{Blocks:AboutBlocks,State:AboutState}
+    props: { Blocks: AboutBlocks, State: AboutState }
   }
 ];
 
